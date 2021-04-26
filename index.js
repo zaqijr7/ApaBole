@@ -2,22 +2,22 @@ const apaBole = (value) => {
     if(typeof value !== 'number' || value < 1) {
         return 'Invalid Input'
     }
-    let array = []
+    let result = ''
     for(let index = 1; index <= value; index++){
         if ( index % 3 === 0 && index % 5 === 0) {
-            array.push('ApaBole')
+            result += 'ApaBole'
         } else if (index % 5 === 0) {
-            array.push('Bole')
+            result += 'Bole'
         } else if (index % 3 === 0) {
-            array.push('Apa')
+            result += 'Apa'
         } else {
-            array.push(index)
+            result += `${index}`
+        }
 
+        if(index !== value){
+            result += ', '
         }
     }
-
-    const result = array.join(', ')
-
     return result
 }
 
